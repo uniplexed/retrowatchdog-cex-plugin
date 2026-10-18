@@ -1,0 +1,23 @@
+{
+  // Self-contained: this config extends nothing.
+  "compilerOptions": {
+    "target": "ES2022",
+    "module": "NodeNext",
+    "moduleResolution": "NodeNext",
+    "strict": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "declaration": true,
+    "outDir": "dist",
+    "rootDir": ".",
+    // Explicit: Node's ambient types and nothing else that lands under
+    // node_modules/@types. Without it `tsc --noEmit` can refuse every
+    // reference to `process`, `Buffer` or a `node:*` import.
+    "types": ["node"]
+  },
+  // `test` is included so `typecheck` (`tsc --noEmit`) looks at it. It does
+  // not reach `dist`: `build` runs tsconfig.build.json, which narrows
+  // `include` to `["src"]`.
+  "include": ["src", "test"]
+}

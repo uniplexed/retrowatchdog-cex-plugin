@@ -1,0 +1,7 @@
+{
+  // The build config: `include` narrowed to `src`, so `build` and the
+  // Dockerfile's `tsc` call emit no compiled test files into dist/.
+  "extends": "./tsconfig.json",
+  "compilerOptions": { "noEmit": false, "outDir": "dist", "rootDir": "src" },
+  "include": ["src"]
+}

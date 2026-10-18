@@ -1,0 +1,14 @@
+# The image needs the pinned tsconfig and the source, nothing else — no
+# test, no fixtures, no dev-only credentials.
+test
+*.test.ts
+vitest.config.ts
+manifest.fixture.json
+fixtures
+scripts
+node_modules
+dist
+.git
+README.md
+.env
+.env.*
